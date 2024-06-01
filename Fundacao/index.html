@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Newsletter FUNBEP</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            width: 100%;
+            text-align: center;
+        }
+        .header img {
+            width: 100%;
+            height: auto;
+        }
+        .section {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .section img {
+            width: 45%;
+            height: auto;
+        }
+        .section .content {
+            width: 50%;
+            padding-left: 20px;
+        }
+        .section .title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #FF7101;
+            margin-bottom: 10px;
+        }
+        .section .description {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: rgb(0, 51, 153);
+        }
+        .button {
+            display: inline-block;
+            padding: 8px 20px;
+            margin-top: 10px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #fff;
+            background-color: #FF7101;
+            text-decoration: none;
+            border-radius: 10px;
+            width: 109px;
+            height: 18px;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: rgb(254, 147, 48);
+        }
+        /* -------- sections -------- */
+        .section1 {
+            background-color: #FEE8D9;
+            padding-top: 17px;
+            padding-bottom: 17px;
+            z-index: 1;
+        }
+        .section1 .content {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            height: 300px;
+            margin-top: 10px;
+        }
+        .section1 .content .title {
+            font-size: 20px;
+            width: 88%;
+            margin-top: 10px;
+        }
+        .section1 .content .description {
+            margin-top: 20px;
+            text-align: justify;
+            text-indent: 25px;
+            line-height: 1.3;
+            width: 90%;
+        }
+        
+        .section2 {
+            background-color: #ffffff00;
+            justify-content: end;
+            /* padding-top: 15px; */
+            margin-top: -40px;
+        }
+        .section2 .content {
+            text-align: right; 
+            padding-right: 20px;
+            margin-bottom: 25px;
+        }
+        .section2 .content .button {
+            margin-top: 50px;
+        }
+        .section2 .content .description {
+            margin-top: 25px;
+            text-align: justify;
+            text-indent: 25px;
+        }
+        
+        .section3 {
+            background-color: #ffffff00;
+        }
+        
+        .section4 {
+            background-color: #ffffff00;
+            z-index: 1;
+        /* margin-bottom: 100px; */
+        }
+
+        .section4 .content {
+            text-align: right;
+            padding-right: 20px; 
+            margin-top: 25px;
+        }
+        .section4 .content .button {
+            margin-top: 75px;
+        }
+       
+        .section5 {
+            background-color: #ffffff00;
+            height: 271px;
+            margin-top: -10px;
+        }
+
+        .section5 .plans .description {
+            display: flex;
+            text-align: justify;
+            align-items: baseline;
+            height: 90%;
+            width: 72%;
+        }
+
+        .section5 .plans .title {
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            width: 100px;
+            height: 60px;
+        }
+        
+        .section6 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            background-color: #ffffff00;
+        }
+        .card {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 70px 30px 30px 30px;
+            border-radius: 30px;
+            width: 90%;
+            background-color: #ffffff00;
+            height: 298px;
+            padding-left: 20px;
+            padding-right: 20px;
+            .title {
+                display: flex;
+                align-items: center;
+                font-size: 22px;
+                width: 100%;
+                height: 55px;
+            }
+            .wpp{
+                padding-top: 12px;
+                padding-right: 10px;
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        .qrcode{
+            cursor: pointer;
+            img{
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        .card__txt1 {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.2;
+            color: rgb(0, 51, 153);
+        }
+
+        .card__txt2 {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.3;
+            color: rgb(0, 51, 153);
+        }
+        
+        .section7 {
+            background-color: #FFEBEE;
+        }
+        .section7 .content .title {
+            color: #E53935;
+        }
+
+        .section1_button_container{
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            align-items: end;
+            width: 90%;
+            margin-top: 25px;
+            height: 18%;
+        }
+
+        .image-container-1{
+            width: 100%;
+            margin-bottom: -7px;
+            margin-left: 80px;
+            img { 
+                width: 190px;
+                height: 22px;
+            }
+        }
+        .image-container-2{
+            width: 100%;
+            margin-top: -31px;
+            img { 
+                width: 150px;
+            }
+        }
+
+        .text-presentation {
+            width: 84%;
+            color: rgb(79 78 78 / 97%);
+            font-family: 'Roboto', sans-serif;
+            font-size: 17px;
+            line-height: 1.2;
+            font-weight: 400;
+            text-align: justify;
+            margin: 10px 30px -18px 40px;
+        }
+
+        .plans {
+            background-color: #ffffff00;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+            width: 318px;
+        }
+
+        .decorative-honeycomb {
+            opacity: 0.4;
+            margin-top: -150px;
+        }
+
+        .honeycomb-background-wrapper{
+            width: 100%;
+            height: 600px;
+            z-index: 0;
+            /* display: flex; */
+            position: relative;
+        }
+
+        .honeycomb-background-footer{
+            position: relative;
+            background-image: url('honeycomb-background.png'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            width: 100%; 
+            height: 100%;
+        }
+        
+        footer{
+            position: relative;
+            display: flex;
+            height: 80px;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            background-color: #ffffff00;
+            a{
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="header.png" alt="FUNBEP Newsletter Header">
+        </div>
+        <div class="text-presentation">
+            <p>Bem-vindo à primeira edição da nossa newsletter.</p>
+            <p>Estamos entusiasmados em ter esse novo canal de comunicação para reforçar ainda mais o nosso compromisso para que as informações sejam compartilhadas de maneira clara e dinâmica.</p>
+            <p>Nesta edição, você fica por dentro de como foi a palestra de Fernanda Lattari com o tema "Investir em educação financeira é investir na sua segurança" para a Semana ENEF.<br>
+                No dia 2 de maio celebramos o Dia Nacional da Ética, conheça nossas ações do dia lá relacionadas ao tema.<br>
+                Você sabia que é possível enviar documentos pelo site via Fale Conosco? Elabamos um passo a passo para te ajudar nessa jornada.<br>
+                Por fim, relembre quais são os institutos previdenciários, quando e como solicitar.</p>
+            <div style="display: flex; flex-direction: row-reverse;"><p>Boa leitura!</p></div>
+        </div>
+        <div class="image-container-1">
+            <img src="fundo1-coruja1.png" alt="Fundo Superior">
+        </div>
+        <div class="section section1">
+            <div class="decorative-line line1"></div>
+            <img src="Notícia 01.png" alt="Destaques da palestra da Semana ENEF">
+            <div class="content">
+                <div class="title">Confira os destaques da palestra da Semana ENEF</div>
+                <div class="description">
+                    Fernanda Lattari reforçou a importância de ter um planejamento financeiro e poupar para o futuro com a palestra "Investir em educação financeira é investir na sua segurança".
+                </div>
+                <div class="section1_button_container">
+                    <a href="https://www.fundacaoitauunibanco.com.br/" class="button">Continuar lendo</a>
+                </div>
+            </div>
+        </div>
+        <div class="image-container-2">
+            <img src="fundo2-coruja2.png" alt="Fundo Inferior">
+        </div>
+        <div class="section section2">
+            <div class="content">
+                <div class="title">Ética é inegociável</div>
+                <div class="description">
+                    No mês de maio celebramos o Dia Nacional da Ética. Este é um momento importante para reforçarmos o nosso compromisso com os altos padrões éticos em todas as nossas operações.
+                </div>
+                <a href="https://www.fundacaoitauunibanco.com.br/" class="button">Continuar lendo</a>
+            </div>
+            <img src="Notícia 02.png" alt="Ética é inegociável">
+        </div>
+        <div class="section section3">
+            <img src="Notícia 03.png" alt="Saiba como enviar documentos via Fale Conosco">
+            <div class="content">
+                <div class="title">Saiba como enviar documentos via Fale Conosco</div>
+                <div class="description">
+                    Envie Formulário de Benefícios, Formulário de Contribuição Suplementar, Formulário de Alteração de Dados Cadastrais, Termo de Opção, Revisão Administrativa e muitos outros diretamente pelo site.
+                </div>
+                <a href="https://www.fundacaoitauunibanco.com.br/" class="button">Continuar lendo</a>
+            </div>
+        </div>
+        <div class="section section4">
+            <div class="content">
+                <div class="title">Institutos previdenciários:<br> vamos relembrar?</div>
+                <div class="description">
+                    Os chamados institutos previdenciários são um direito legal que permitem aos participantes ativos determinarem se e como pretendem manter o vínculo com a entidade.
+                </div>
+                <a href="https://www.fundacaoitauunibanco.com.br/" class="button">Continuar lendo</a>
+            </div>
+            <img src="Notícia 04.png" alt="Institutos previdenciários">
+        </div>
+        <div class="decorative-honeycomb">
+            <img src="honeycomb-decorative.png">
+        </div>
+        <div class="section section5">
+            <div class="plans">
+                <div class="title">Planos CD</div>
+                <div class="description">
+                    Acesse a página do seu plano e confira a rentabilidade e explicativo do mês de março                    
+                </div>
+                <a href="https://www.fundacaoitauunibanco.com.br/" class="button">Acesse aqui</a>
+            </div>
+            <div class="plans">
+                <div class="title">Todos os planos</div>
+                <div class="description">
+                    Na página do seu plano você confere o calendário de 
+                    pagamento, guia e regulamento do plano e muito mais!
+                </div>
+                <a href="https://www.fundacaoitauunibanco.com.br/" class="button">Acesse aqui</a>
+            </div>
+            <div class="plans">
+                <div class="title">Educação Financeira e Previdenciária</div>
+                <div class="description">
+                    Confira o conteúdo que disponibilizamos para auxiliar na sua jornada previdenciária
+                </div>
+                <a href="https://www.fundacaoitauunibanco.com.br/" class="button">Acesse aqui</a>
+            </div>
+        </div>
+        <div class="honeycomb-background-footer">
+            <div class="section section6">
+                <div class="card">
+                    <div>
+                        <div class="title">Precisa de atendimento?</div>
+                        <div style="display: flex;">
+                            <img class="wpp" src="wpp.png" alt="wpp">
+                            <p class="card__txt2">WhatsApp</p>
+                        </div>
+                        <p class="card__txt1">Adicione o número 11 4002 1299 aos seus contatos ou <br> aponte a câmera do seu celular para o QR Code:</p>
+                        <p class="card__txt2">Webchat via Acesso do Participante.</p>
+                        <p class="card__txt2">Acesse o site e saiba mais sobre nossos outros canais de atendimento.</p>
+                    </div>
+                    <a class="qrcode" href="https://www.fundacaoitauunibanco.com.br/"><img src="qrcode.png" alt="QR Code"></a>
+                </div>
+            </div>
+            <footer>
+                <a class="card__txt1" href="https://www.fundacaoitauunibanco.com.br/">www.fundacaoitauunibanco.com.br</a>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
